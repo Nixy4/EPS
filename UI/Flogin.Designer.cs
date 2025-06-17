@@ -42,7 +42,7 @@
             this.lb_userName.Size = new System.Drawing.Size(156, 25);
             this.lb_userName.TabIndex = 0;
             this.lb_userName.TextChanged += new System.EventHandler(this.lb_userName_TextChanged);
-            this.lb_userName.PlaceholderText = "请输入用户名"; // 添加提示字符串
+           // this.lb_userName.PlaceholderText = "请输入用户名"; // 添加提示字符串
             // 
             // lb_password
             // 
@@ -52,7 +52,7 @@
             this.lb_password.Size = new System.Drawing.Size(156, 25);
             this.lb_password.TabIndex = 1;
             this.lb_password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.lb_password.PlaceholderText = "请输入密码"; // 添加提示字符串
+            //this.lb_password.PlaceholderText = "请输入密码"; // 添加提示字符串
             // 
             // btn_login
             // 
