@@ -19,9 +19,9 @@ namespace UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // 启动登录窗口
-            //Application.Run(new Flogin());
+            Application.Run(new Flogin());
             //测试阶段,直接进入批量导入界面
-            Application.Run(new FBatchImportFromExcel());
+            //Application.Run(new FBatchImportFromExcel());
 
         }
     }
