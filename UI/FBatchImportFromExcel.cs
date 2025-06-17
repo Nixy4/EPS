@@ -46,6 +46,9 @@ namespace UI
                 //1.选择模板
                 string seletedModuleName = cb_template.Text;   //选择模板的名称
                 int seletedModeIndex = cb_template.SelectedIndex;//选择的模板序号，从0开始
+                Console.WriteLine("当前模板名称:" + seletedModuleName);
+                Console.WriteLine("当前模板索引:" + seletedModeIndex);
+
                 if (seletedModuleName == "")
                 {
                     MessageBox.Show("模板必须选择");
@@ -68,16 +71,32 @@ namespace UI
 
                     //4.防止读错模板
                     //4.1约定的字段名称字符串
+
+                    //4.防止读错模板
+                    //4.1约定的字段名称字符串
                     string[] moduleListName = new string[]{
-                    "教室编号教室名称类型最大能考人数所在楼名所在楼层",
-                    "教师编号教师名称性别"
-                };
+                        "序号",
+                        "课程号",
+                        "课程名",
+                        "合班人数",
+                        "人数",
+                        "上课教师",
+                        "课程负责人",
+                        "是否统一安排",
+                        "考试环境",
+                        "考试时间",
+                        "备注"
+                    };
 
                     //4.2读取Excel列字符串
                     string readModuleName = "";
                     for (int i = 0; i < dt.Columns.Count; i++)
                     {
-                        readModuleName = readModuleName + dt.Columns[i].Caption;
+                        readModuleName = dt.Columns[i].Caption;
+                        if(readModuleName != moduleListName[i])
+                        {
+                            Console.WriteLine("readModuleName[" + i + "] = " + readModuleName);
+                        }
                     }
 
                     //4.3比较
