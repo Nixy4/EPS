@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using UI;
 
 namespace UI
 {
@@ -46,22 +47,20 @@ namespace UI
                 return;
             }
 
-            // 调用 BLL 方法
+            // 调用BLL方法
             UserBLL ub = new UserBLL();
             bool rs = ub.Check(userName, userPassword);
 
-            if (rs == false)
+            if (rs)
             {
-                MessageBox.Show("登录失败，请检查用户名和密码！");
+                // 登录成功，跳转到 FBatchImportFromExcel 页面
+                FBatchImportFromExcel batchImportForm = new FBatchImportFromExcel();
+                batchImportForm.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("登录成功！");
-                // 登录成功后，关闭当前登录窗口
-                this.Hide();
-                // 创建并显示批量导入窗口
-                FBatchImportFromExcel batchImportForm = new FBatchImportFromExcel();
-                batchImportForm.Show();
+                MessageBox.Show("用户名或密码错误，请重试！");
             }
         }
     }

@@ -30,46 +30,47 @@
         {
             this.lb_userName = new System.Windows.Forms.TextBox();
             this.lb_password = new System.Windows.Forms.TextBox();
-            this.lb_login = new System.Windows.Forms.Label();
+            this.btn_login = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // lb_userName
             // 
-            this.lb_userName.Location = new System.Drawing.Point(948, 202);
+            this.lb_userName.Location = new System.Drawing.Point(50, 50);
             this.lb_userName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lb_userName.Name = "lb_userName";
             this.lb_userName.Size = new System.Drawing.Size(156, 25);
             this.lb_userName.TabIndex = 0;
             this.lb_userName.TextChanged += new System.EventHandler(this.lb_userName_TextChanged);
+            this.lb_userName.PlaceholderText = "请输入用户名"; // 添加提示字符串
             // 
             // lb_password
             // 
-            this.lb_password.Location = new System.Drawing.Point(948, 253);
+            this.lb_password.Location = new System.Drawing.Point(50, 100);
             this.lb_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lb_password.Name = "lb_password";
             this.lb_password.Size = new System.Drawing.Size(156, 25);
             this.lb_password.TabIndex = 1;
             this.lb_password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.lb_password.PlaceholderText = "请输入密码"; // 添加提示字符串
             // 
-            // lb_login
+            // btn_login
             // 
-            this.lb_login.AutoSize = true;
-            this.lb_login.BackColor = System.Drawing.Color.Transparent;
-            this.lb_login.Font = new System.Drawing.Font("宋体", 18F);
-            this.lb_login.Location = new System.Drawing.Point(909, 352);
-            this.lb_login.Name = "lb_login";
-            this.lb_login.Size = new System.Drawing.Size(0, 30);
-            this.lb_login.TabIndex = 2;
-            this.lb_login.Click += new System.EventHandler(this.lb_login_Click);
+            this.btn_login.Font = new System.Drawing.Font("宋体", 18F);
+            this.btn_login.Location = new System.Drawing.Point(50, 150);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(156, 40);
+            this.btn_login.TabIndex = 2;
+            this.btn_login.Text = "登录";
+            this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // Flogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::UI.Properties.Resources.login;
-            this.ClientSize = new System.Drawing.Size(1213, 522);
-            this.Controls.Add(this.lb_login);
+            this.ClientSize = new System.Drawing.Size(this.lb_userName.Width + 100, 250); // 调整窗口大小
+            this.Controls.Add(this.btn_login);
             this.Controls.Add(this.lb_password);
             this.Controls.Add(this.lb_userName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -87,8 +88,7 @@
 
         private System.Windows.Forms.TextBox lb_userName;
         private System.Windows.Forms.TextBox lb_password;
-        private System.Windows.Forms.Label lb_login;
+        private System.Windows.Forms.Button btn_login;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
-
