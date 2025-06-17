@@ -27,35 +27,42 @@ namespace UI
         {
 
         }
-        //登录按钮S
-        private void lb_login_Click(object sender, EventArgs e)
+
+        private void lb_userName_TextChanged(object sender, EventArgs e)
         {
-            //获取用户信息
+
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            // 获取用户信息
             string userName = lb_userName.Text.Trim();
             string userPassword = lb_password.Text.Trim();
-            //验证输入的合理性
+
+            // 验证输入的合理性
             if (userName == "" || userPassword == "")
             {
                 MessageBox.Show("用户名或密码不能为空！");
                 return;
             }
-            //调用BLL方法
+
+            // 调用 BLL 方法
             UserBLL ub = new UserBLL();
             bool rs = ub.Check(userName, userPassword);
+
             if (rs == false)
             {
-                //跳转到相应的界面
-                MessageBox.Show("NO");
+                MessageBox.Show("登录失败，请检查用户名和密码！");
             }
             else
             {
-                MessageBox.Show("OK");
+                MessageBox.Show("登录成功！");
+                // 登录成功后，关闭当前登录窗口
+                this.Hide();
+                // 创建并显示批量导入窗口
+                FBatchImportFromExcel batchImportForm = new FBatchImportFromExcel();
+                batchImportForm.Show();
             }
-        }
-
-        private void lb_userName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

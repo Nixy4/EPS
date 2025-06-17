@@ -19,16 +19,27 @@ namespace BLL
         /// <returns>true 身份验证通过，false 身份验证不通过</returns>
         public bool Check(string userName, string password)
         {
-            Security sec = new Security();
-            UserDAL ud = new UserDAL();
-            string returnPassword = ud.GetPassword(userName);
-            if (returnPassword == sec.MD5(password))
+            //Security sec = new Security();
+            //UserDAL ud = new UserDAL();
+            //string returnPassword = ud.GetPassword(userName);
+            //if (returnPassword == sec.MD5(password))
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+
+            string defaultUserName = "admin"; // 默认用户名
+            string defaultPassword = "123"; // 默认密码
+            if (userName == defaultUserName && password == defaultPassword)
             {
-                return true;
+                return true; // 验证通过
             }
             else
             {
-                return false;
+                return false; // 验证不通过
             }
         }
     }
