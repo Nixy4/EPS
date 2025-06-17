@@ -51,16 +51,20 @@ namespace UI
                     MessageBox.Show("模板必须选择");
                     return;
                 }
+
                 //2.打开选择文件的控件
                 DialogResult result = openFileDialog1.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
                     tb_fileName.Text = openFileDialog1.FileName;
+                    Console.WriteLine("tb_fileName.Text = " + tb_fileName.Text);
 
                     //3.从BLL中读取Excel数据
                     ImportFromExcelBLL ieb = new ImportFromExcelBLL();
+
                     DataTable dt = ieb.Import(tb_fileName.Text);
+                    Console.WriteLine("dt.Rows.Count = " + dt.Rows.Count);
 
                     //4.防止读错模板
                     //4.1约定的字段名称字符串

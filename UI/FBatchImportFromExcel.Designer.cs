@@ -106,7 +106,7 @@
             this.bt_brower.Name = "bt_brower";
             this.bt_brower.Size = new System.Drawing.Size(100, 28);
             this.bt_brower.TabIndex = 5;
-            this.bt_brower.Text = "浏览...";
+            this.bt_brower.Text = "选择Excel文件";
             this.bt_brower.UseVisualStyleBackColor = true;
             this.bt_brower.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -168,8 +168,8 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Excel File |*.xls ";
+            this.openFileDialog1.FileName = "";
+            this.openFileDialog1.Filter = "Excel File |*.xls";
             // 
             // FBatchImportFromExcel
             // 
